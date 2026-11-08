@@ -1,0 +1,1188 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05080f">
+  <script>
+    (function () {
+      var ua = navigator.userAgent || '';
+      var isIE = /MSIE\s|Trident\//.test(ua);
+      var chrome = ua.match(/Chrome\/(\d+)/);
+      var firefox = ua.match(/Firefox\/(\d+)/);
+      var oldChrome = chrome && parseInt(chrome[1], 10) < 100;
+      var oldFirefox = firefox && parseInt(firefox[1], 10) < 100;
+      if (isIE || oldChrome || oldFirefox) {
+        window.location.replace('compat.html');
+      }
+    })();
+  </script>
+  <title>信息科技互动课堂 · 七年级两课 + 八年级第9课</title>
+  <meta name="description" content="2024 人教版初中信息科技互动网站：七年级第一单元两课，以及八年级上册第二单元第9课《互联协议仍沿用》。开始页任选一课，任务式闯关。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305080f'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%2357e8ff' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23a7ff6a'/%3E%3Cpath d='M14 32h36M32 14v36' stroke='%2357e8ff' stroke-width='2' opacity='.7'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/styles.css?v=20261108-g8i">
+  <link rel="stylesheet" href="assets/lesson2.css?v=20261108-g8i">
+  <link rel="stylesheet" href="assets/readability.css?v=20261108-g8i">
+  <link rel="stylesheet" href="assets/lesson3.css?v=20261108-g8i">
+</head>
+<body class="is-locked" data-course="1">
+
+  <!-- ============ 启动界面 ============ -->
+  <div class="launch" id="launch" role="dialog" aria-modal="true" aria-labelledby="launchTitle">
+    <div class="launch-grid" aria-hidden="true"></div>
+    <div class="launch-glow" aria-hidden="true"></div>
+    <div class="launch-panel">
+      <div class="launch-main">
+        <div class="eyebrow"><span class="live-dot"></span> CLASSROOM OS · THREE LESSONS</div>
+        <p class="launch-unit">七年级 · 八年级　信息科技</p>
+        <h1 id="launchTitle">互联世界<br><span>应用与协议</span><i>。</i></h1>
+        <p class="launch-lead">三课独立。先选一课，再选小队，开始闯关。</p>
+        <div class="launch-courses" id="launchCourses" role="radiogroup" aria-label="选择课程">
+          <span class="launch-band">七年级 · 第一单元</span>
+          <button class="launch-course is-active" data-launch-course="1" type="button" role="radio" aria-checked="true">
+            <span>第 1 课 · 7 站</span>
+            <b>互联网发展靠创新</b>
+            <small>网络结构 · 时间轴 · 中国创新</small>
+          </button>
+          <button class="launch-course" data-launch-course="2" type="button" role="radio" aria-checked="false">
+            <span>第 2 课 · 6 站</span>
+            <b>互联网应用新特征</b>
+            <small>内容 · 界面 · 应用融合</small>
+          </button>
+          <span class="launch-band launch-band-g8">八年级上册 · 第二单元</span>
+          <button class="launch-course launch-course-wide" data-launch-course="3" type="button" role="radio" aria-checked="false">
+            <span>第 9 课 · 6 站</span>
+            <b>互联协议仍沿用</b>
+            <small>互联网数据 · API · HTTP · 物联协议</small>
+          </button>
+        </div>
+        <div class="launch-facts">
+          <div><b>3</b><span>门独立课程</span></div>
+          <div><b>19</b><span>个互动任务</span></div>
+          <div><b>4</b><span>支探索小队</span></div>
+        </div>
+      </div>
+      <div class="launch-side">
+        <div class="launch-side-head">
+          <span>SELECT YOUR SQUAD</span>
+          <b>选择探索小队</b>
+        </div>
+        <div class="launch-teams" id="launchTeams">
+          <button class="team-choice" data-team="q" type="button" style="--team-color:#57e8ff">
+            <i>Q</i><span><b>量子队</b><small>微观世界 · 连接无限</small></span>
+          </button>
+          <button class="team-choice" data-team="s" type="button" style="--team-color:#a7ff6a">
+            <i>S</i><span><b>星链队</b><small>织网成链 · 覆盖全球</small></span>
+          </button>
+          <button class="team-choice" data-team="p" type="button" style="--team-color:#ffc857">
+            <i>P</i><span><b>光子队</b><small>光速传输 · 毫秒必争</small></span>
+          </button>
+          <button class="team-choice" data-team="d" type="button" style="--team-color:#ff6ec7">
+            <i>D</i><span><b>深蓝队</b><small>潜入深蓝 · 探索未知</small></span>
+          </button>
+        </div>
+        <label class="launch-check">
+          <input type="checkbox" id="launchFullscreen">
+          <span>启动后进入全屏授课</span>
+        </label>
+        <button class="btn btn-primary launch-enter" id="launchBtn" type="button">
+          <span>进入第 1 课</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="launch-tip">推荐 Chrome / Edge · 音效可关闭</p>
+      </div>
+      <span class="launch-corner tl"></span><span class="launch-corner tr"></span>
+      <span class="launch-corner bl"></span><span class="launch-corner br"></span>
+    </div>
+  </div>
+
+  <canvas id="fxCanvas" class="fx-canvas" aria-hidden="true"></canvas>
+  <div class="page-atmosphere" aria-hidden="true"></div>
+
+  <!-- ============ 顶部导航 ============ -->
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#home" aria-label="回到课堂首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="3"/><path d="M9 24h30M24 9v30M13.5 13.5l21 21M34.5 13.5l-21 21"/></svg>
+      </span>
+      <span class="brand-text"><b>信息科技</b><small>七 / 八年级 · 三课互联</small></span>
+    </a>
+
+    <div class="course-switch" role="group" aria-label="课程切换">
+      <button class="course-btn is-active" data-course-btn="1" type="button" aria-pressed="true"><i>L1</i><span>第1课</span></button>
+      <button class="course-btn" data-course-btn="2" type="button" aria-pressed="false"><i>L2</i><span>第2课</span></button>
+      <button class="course-btn" data-course-btn="3" type="button" aria-pressed="false"><i>G8</i><span>第9课</span></button>
+    </div>
+
+    <nav class="station-nav" data-course-nav="1" aria-label="第一课课堂环节">
+      <a class="station-link" data-station="origin" href="#origin"><i>01</i><span>网之初</span></a>
+      <a class="station-link" data-station="timeline" href="#timeline"><i>02</i><span>时光轴</span></a>
+      <a class="station-link" data-station="topology" href="#topology"><i>03</i><span>结构室</span></a>
+      <a class="station-link" data-station="china" href="#china"><i>04</i><span>中国卷</span></a>
+      <a class="station-link" data-station="plus" href="#plus"><i>05</i><span>互联网+</span></a>
+      <a class="station-link" data-station="beidou" href="#beidou"><i>06</i><span>北斗</span></a>
+      <a class="station-link" data-station="challenge" href="#challenge"><i>07</i><span>闯关</span></a>
+    </nav>
+
+    <nav class="station-nav" data-course-nav="2" aria-label="第二课课堂环节" hidden>
+      <a class="station-link" data-station="l2-content" href="#l2-content"><i>01</i><span>形态</span></a>
+      <a class="station-link" data-station="l2-ui" href="#l2-ui"><i>02</i><span>界面</span></a>
+      <a class="station-link" data-station="l2-fusion" href="#l2-fusion"><i>03</i><span>融合</span></a>
+      <a class="station-link" data-station="l2-atlas" href="#l2-atlas"><i>04</i><span>图谱</span></a>
+      <a class="station-link" data-station="l2-data" href="#l2-data"><i>05</i><span>数据</span></a>
+      <a class="station-link" data-station="l2-life" href="#l2-life"><i>06</i><span>生活</span></a>
+    </nav>
+
+    <nav class="station-nav" data-course-nav="3" aria-label="八年级第9课课堂环节" hidden>
+      <a class="station-link" data-station="l3-data" href="#l3-data"><i>01</i><span>数据</span></a>
+      <a class="station-link" data-station="l3-api" href="#l3-api"><i>02</i><span>API</span></a>
+      <a class="station-link" data-station="l3-http" href="#l3-http"><i>03</i><span>HTTP</span></a>
+      <a class="station-link" data-station="l3-limit" href="#l3-limit"><i>04</i><span>瓶颈</span></a>
+      <a class="station-link" data-station="l3-feature" href="#l3-feature"><i>05</i><span>协议</span></a>
+      <a class="station-link" data-station="l3-choice" href="#l3-choice"><i>06</i><span>决策</span></a>
+    </nav>
+
+    <div class="team-hud" id="teamHud" aria-label="探索小队计分板">
+      <button class="team-chip" data-team="q" type="button" style="--team-color:#57e8ff" aria-label="量子队，0 探索值"><i></i><span class="team-name">量子</span><b class="team-score">0</b></button>
+      <button class="team-chip" data-team="s" type="button" style="--team-color:#a7ff6a" aria-label="星链队，0 探索值"><i></i><span class="team-name">星链</span><b class="team-score">0</b></button>
+      <button class="team-chip" data-team="p" type="button" style="--team-color:#ffc857" aria-label="光子队，0 探索值"><i></i><span class="team-name">光子</span><b class="team-score">0</b></button>
+      <button class="team-chip" data-team="d" type="button" style="--team-color:#ff6ec7" aria-label="深蓝队，0 探索值"><i></i><span class="team-name">深蓝</span><b class="team-score">0</b></button>
+    </div>
+
+    <div class="top-actions">
+      <button class="icon-btn" id="soundBtn" type="button" aria-label="关闭音效" aria-pressed="true" title="音效">
+        <svg class="icon-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8c1.2 1.1 2 2.4 2 4s-.8 2.9-2 4M18.5 5.5C20.4 7.2 22 9.5 22 12s-1.6 4.8-3.5 6.5"/></svg>
+        <svg class="icon-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l5 6M22 9l-5 6"/></svg>
+      </button>
+      <button class="icon-btn teacher-btn" id="teacherBtn" type="button" aria-label="打开教师控制台" title="教师控制台">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 12h2M10 12h10M4 17h7M15 17h5"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="12" r="2"/><circle cx="13" cy="17" r="2"/></svg>
+      </button>
+    </div>
+    <div class="page-progress"><i id="pageProgress"></i></div>
+  </header>
+
+  <nav class="mobile-stations" data-course-nav="1" aria-label="第一课环节快捷导航">
+    <a data-station="origin" href="#origin"><b>01</b><span>网之初</span></a>
+    <a data-station="timeline" href="#timeline"><b>02</b><span>时光轴</span></a>
+    <a data-station="topology" href="#topology"><b>03</b><span>结构室</span></a>
+    <a data-station="china" href="#china"><b>04</b><span>中国卷</span></a>
+    <a data-station="plus" href="#plus"><b>05</b><span>互联网+</span></a>
+    <a data-station="beidou" href="#beidou"><b>06</b><span>北斗</span></a>
+    <a data-station="challenge" href="#challenge"><b>07</b><span>闯关</span></a>
+  </nav>
+
+  <nav class="mobile-stations" data-course-nav="2" aria-label="第二课环节快捷导航" hidden>
+    <a data-station="l2-content" href="#l2-content"><b>01</b><span>形态</span></a>
+    <a data-station="l2-ui" href="#l2-ui"><b>02</b><span>界面</span></a>
+    <a data-station="l2-fusion" href="#l2-fusion"><b>03</b><span>融合</span></a>
+    <a data-station="l2-atlas" href="#l2-atlas"><b>04</b><span>图谱</span></a>
+    <a data-station="l2-data" href="#l2-data"><b>05</b><span>数据</span></a>
+    <a data-station="l2-life" href="#l2-life"><b>06</b><span>生活</span></a>
+  </nav>
+
+  <nav class="mobile-stations" data-course-nav="3" aria-label="八年级第9课环节快捷导航" hidden>
+    <a data-station="l3-data" href="#l3-data"><b>01</b><span>数据</span></a>
+    <a data-station="l3-api" href="#l3-api"><b>02</b><span>API</span></a>
+    <a data-station="l3-http" href="#l3-http"><b>03</b><span>HTTP</span></a>
+    <a data-station="l3-limit" href="#l3-limit"><b>04</b><span>瓶颈</span></a>
+    <a data-station="l3-feature" href="#l3-feature"><b>05</b><span>协议</span></a>
+    <a data-station="l3-choice" href="#l3-choice"><b>06</b><span>决策</span></a>
+  </nav>
+
+  <button class="l3-replay-all" id="l3ReplayAll" data-l3-replay-all type="button" title="重置六站交互；保留通关进度，不重复加分">
+    <span aria-hidden="true">↻</span> 重做第9课
+  </button>
+
+  <main>
+    <!-- ============ 首页 ============ -->
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow hero-eyebrow"><span class="live-dot"></span> 第一单元 · 第 1 课</div>
+          <h1 class="hero-title"><span>互联网发展</span><span class="accent">靠创新<i>。</i></span></h1>
+          <p class="hero-lead">用 7 个任务拆解网络结构，看懂中国互联网的创新路径。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#origin">
+              <span>开始第 01 站</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            </a>
+            <button class="btn btn-ghost" id="missionBtn" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+              <span>任务清单</span>
+            </button>
+          </div>
+          <div class="hero-facts">
+            <div><span>01</span><b>7 个站点</b><small>本课闯关</small></div>
+            <div><span>02</span><b>4 个阶段</b><small>连接升级</small></div>
+            <div><span>03</span><b>3 张网</b><small>理解连接</small></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <canvas id="netCanvas"></canvas>
+          <div class="orbit orbit-a"></div>
+          <div class="orbit orbit-b"></div>
+          <div class="orbit orbit-c"></div>
+          <div class="hero-core"><span>INTERNET</span><b>连接</b><small>NODE · LINK · SHARE</small></div>
+          <div class="hud-tag tag-a"><i></i> SIGNAL LIVE</div>
+          <div class="hud-tag tag-b"><b>64</b> NODES</div>
+          <div class="hud-tag tag-c"><b>112</b> LINKS</div>
+          <div class="hero-visual-caption">连接，带来创新。</div>
+        </div>
+      </div>
+      <div class="hero-bottom">
+        <div class="scroll-cue"><i></i><span>SCROLL TO EXPLORE</span></div>
+        <div class="hero-source">依据：2024 人教版七年级 · 课件 1、2</div>
+      </div>
+    </section>
+
+    <!-- ============ 01 网之初 ============ -->
+    <section class="section course1-section" id="origin">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">01</div>
+          <div>
+            <div class="section-meta"><span>ORIGIN / 网之初</span><i></i><span>建议 6 分钟</span></div>
+            <h2>三张“网”，<span class="hl">藏着同一个秘密</span></h2>
+            <p class="section-dek">点开 3 张网，找出网络的 3 个关键词。</p>
+          </div>
+        </div>
+
+        <div class="origin-grid">
+          <div class="net-triptych" data-reveal>
+            <button class="net-card" data-net="ball" type="button" aria-pressed="false">
+              <span class="net-no">A</span>
+              <svg class="net-art" viewBox="0 0 200 200" aria-hidden="true">
+                <circle cx="100" cy="100" r="72"/>
+                <ellipse cx="100" cy="100" rx="72" ry="28"/>
+                <ellipse cx="100" cy="100" rx="28" ry="72"/>
+                <path d="M39 39c35 35 87 87 122 122M161 39C126 74 74 126 39 161"/>
+              </svg>
+              <span class="net-label"><b>球网</b><small>受力与连接</small></span>
+              <span class="net-secret">节点 × 连线 = 整体</span>
+            </button>
+            <button class="net-card" data-net="fish" type="button" aria-pressed="false">
+              <span class="net-no">B</span>
+              <svg class="net-art" viewBox="0 0 200 200" aria-hidden="true">
+                <defs>
+                  <pattern id="fishMesh" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <path d="M0 0h24v24" fill="none" stroke="currentColor" stroke-width="2"/>
+                  </pattern>
+                </defs>
+                <path class="fish-shape" d="M26 58Q100 10 174 58L148 178H52Z" fill="url(#fishMesh)"/>
+                <path d="M26 58Q100 10 174 58L148 178H52Z" fill="none"/>
+              </svg>
+              <span class="net-label"><b>渔网</b><small>重复与覆盖</small></span>
+              <span class="net-secret">节点 × 连线 = 覆盖</span>
+            </button>
+            <button class="net-card" data-net="spider" type="button" aria-pressed="false">
+              <span class="net-no">C</span>
+              <svg class="net-art" viewBox="0 0 200 200" aria-hidden="true">
+                <g>
+                  <path d="M100 22v156M22 100h156M45 45l110 110M155 45L45 155M31 77l138 46M31 123l138-46"/>
+                  <path d="M100 45l38 17 17 38-17 38-38 17-38-17-17-38 17-38z"/>
+                  <path d="M100 67l23 10 10 23-10 23-23 10-23-10-10-23 10-23z"/>
+                  <path d="M100 85l10 5 5 10-5 10-10 5-10-5-5-10 5-10z"/>
+                </g>
+              </svg>
+              <span class="net-label"><b>蜘蛛网</b><small>辐射与韧性</small></span>
+              <span class="net-secret">节点 × 连线 = 韧性</span>
+            </button>
+          </div>
+
+          <aside class="origin-side" data-reveal>
+            <div class="decode-row">
+              <span class="mono-label">DECODE PROGRESS</span>
+              <span><b id="netDecoded">0</b> / 3</span>
+            </div>
+            <div class="net-insight" id="netInsight" aria-live="polite">
+              <span class="insight-icon">?</span>
+              <p>点击任意一张网，看看它的“连接方式”。</p>
+            </div>
+            <div class="definition-card is-locked" id="definitionCard">
+              <span class="definition-label">DEFINITION / 定义</span>
+              <p>网络利用<span>通信线路</span>把若干台计算机互相连接，实现<span>信息交换</span>和<span>资源共享</span>。无数个这样的网络相互连接，就形成了<span>互联网</span>。</p>
+              <div class="three-elements">
+                <span><i>01</i>节点</span>
+                <span><i>02</i>链路</span>
+                <span><i>03</i>资源</span>
+              </div>
+              <div class="definition-lock"><b>解码 3 张网后解锁定义</b><small>连接，是互联网的第一性原理</small></div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="lab-panel tech-panel build-lab" data-reveal>
+          <div class="lab-head">
+            <div><span class="lab-code">LAB / 01</span><h3>亲手组一张网</h3></div>
+            <p>依次点击两台设备，为它们拉一条“网线”。把所有设备连成一个整体，再发送一个数据包。</p>
+          </div>
+          <div class="build-layout">
+            <div class="build-board" id="buildBoard">
+              <div class="board-grid" aria-hidden="true"></div>
+              <svg id="buildSvg" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true"></svg>
+              <button class="device-node" data-node="server" style="left:12%;top:50%" type="button"><i>S</i><b>服务器</b><small>数据源</small></button>
+              <button class="device-node" data-node="a" style="left:38%;top:18%" type="button"><i>A</i><b>电脑 A</b><small>终端</small></button>
+              <button class="device-node" data-node="b" style="left:38%;top:78%" type="button"><i>B</i><b>电脑 B</b><small>终端</small></button>
+              <button class="device-node" data-node="tablet" style="left:66%;top:50%" type="button"><i>T</i><b>学习平板</b><small>终端</small></button>
+              <button class="device-node" data-node="phone" style="left:88%;top:20%" type="button"><i>P</i><b>手机</b><small>目的地</small></button>
+              <div class="board-hint" id="boardHint">点击两台设备，开始布线</div>
+            </div>
+            <aside class="build-side">
+              <div class="readout">
+                <div><span>已建线路</span><b id="linkCount">0</b></div>
+                <div><span>连通状态</span><b id="buildStatus" class="status-off">未连通</b></div>
+                <div><span>网络规模</span><b>5 台</b></div>
+              </div>
+              <p class="build-tip">小提示：网络不一定要两两相连。只要每台设备都能找到通往其他设备的路径，它们就在同一张网里。</p>
+              <div class="build-actions">
+                <button class="btn btn-primary btn-small" id="sendPacket" type="button" disabled>
+                  <span>发送数据包</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+                </button>
+                <button class="btn btn-quiet btn-small" id="resetBuild" type="button">重置线路</button>
+              </div>
+              <div class="lab-award" id="buildAward">组网成功 +10 探索值</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02 时光轴 ============ -->
+    <section class="section course1-section" id="timeline">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">02</div>
+          <div>
+            <div class="section-meta"><span>TIME TUNNEL / 时光轴</span><i></i><span>建议 8 分钟</span></div>
+            <h2>把关键事件，<span class="hl">放回时间的坐标</span></h2>
+            <p class="section-dek">排好 4 张事件卡，看懂互联网的 4 次连接升级。</p>
+          </div>
+        </div>
+
+        <div class="timeline-board tech-panel" data-reveal>
+          <div class="timeline-top">
+            <div><span class="lab-code">CHALLENGE / 01</span><h3>关键事件归位</h3></div>
+            <div class="timeline-status" id="timelineStatus" aria-live="polite">把 A—D 放入对应年份</div>
+          </div>
+          <div class="timeline-slots" id="timelineSlots">
+            <div class="timeline-rail" aria-hidden="true"></div>
+            <button class="year-slot" data-year="1981" type="button"><span class="year">1981</span><span class="slot-fill">放入事件</span><small>互联网的“门牌号”</small></button>
+            <button class="year-slot" data-year="1983" type="button"><span class="year">1983</span><span class="slot-fill">放入事件</span><small>不同网络说同一种语言</small></button>
+            <button class="year-slot" data-year="1989" type="button"><span class="year">1989</span><span class="slot-fill">放入事件</span><small>信息浏览的时代开启</small></button>
+            <button class="year-slot" data-year="2017" type="button"><span class="year">2017</span><span class="slot-fill">放入事件</span><small>地址空间的大升级</small></button>
+          </div>
+          <div class="timeline-tray" id="eventTray">
+            <button class="event-card" data-event="A" draggable="true" type="button"><i>A</i><span>大规模启用 IPv6</span><small>拖动 / 点选</small></button>
+            <button class="event-card" data-event="B" draggable="true" type="button"><i>B</i><span>万维网诞生</span><small>拖动 / 点选</small></button>
+            <button class="event-card" data-event="C" draggable="true" type="button"><i>C</i><span>IPv4 发布</span><small>拖动 / 点选</small></button>
+            <button class="event-card" data-event="D" draggable="true" type="button"><i>D</i><span>阿帕网改用 TCP/IP</span><small>拖动 / 点选</small></button>
+          </div>
+          <div class="timeline-controls">
+            <button class="btn btn-primary btn-small" id="timelineCheck" type="button">校验时间轴</button>
+            <button class="btn btn-quiet btn-small" id="timelineHint" type="button">给我一点提示</button>
+            <span class="timeline-hint" id="timelineHintText" aria-live="polite"></span>
+          </div>
+          <div class="timeline-facts" id="timelineFacts" hidden></div>
+        </div>
+
+        <div class="stage-explorer" data-reveal>
+          <div class="stage-tabs" role="tablist" aria-label="互联网发展的四个阶段">
+            <button class="stage-tab is-active" data-stage="0" type="button" role="tab" aria-selected="true"><span>01</span><b>诞生</b><i>1960s</i></button>
+            <button class="stage-tab" data-stage="1" type="button" role="tab" aria-selected="false"><span>02</span><b>形成</b><i>1969</i></button>
+            <button class="stage-tab" data-stage="2" type="button" role="tab" aria-selected="false"><span>03</span><b>互联</b><i>1983</i></button>
+            <button class="stage-tab" data-stage="3" type="button" role="tab" aria-selected="false"><span>04</span><b>高速网络</b><i>1990s →</i></button>
+          </div>
+          <div class="stage-panel tech-panel">
+            <div class="stage-number" id="stageNumber">01</div>
+            <div class="stage-copy">
+              <span class="stage-period" id="stagePeriod">20 世纪 60 年代</span>
+              <h3 id="stageName">诞生阶段</h3>
+              <p id="stageDesc">计算机还很稀少、昂贵。多个终端通过通信线路共享一台主机，网络的思想开始萌芽。</p>
+              <span class="stage-key" id="stageKey">多终端共享</span>
+            </div>
+            <div class="stage-art" id="stageArt" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="inline-quiz tech-panel" id="yearQuiz" data-reveal>
+          <div class="iq-copy">
+            <span class="mono-label">QUICK CHECK / 中国时刻</span>
+            <p>哪一年，一条 <b>64K</b> 国际专线开通，中国实现全功能接入国际互联网？</p>
+          </div>
+          <div class="iq-options">
+            <button data-answer="1987" type="button">1987</button>
+            <button data-answer="1994" type="button">1994</button>
+            <button data-answer="2008" type="button">2008</button>
+          </div>
+          <div class="iq-feedback" id="yearFeedback" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03 结构实验室 ============ -->
+    <section class="section course1-section" id="topology">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">03</div>
+          <div>
+            <div class="section-meta"><span>TOPOLOGY LAB / 结构实验室</span><i></i><span>建议 8 分钟</span></div>
+            <h2>哪张网，<span class="hl">更经得起故障</span></h2>
+            <p class="section-dek">切换 3 种结构，切断线路，看数据如何绕路送达。</p>
+          </div>
+        </div>
+
+        <div class="topo-cards" data-reveal>
+          <button class="topo-card" data-topo="star" type="button" aria-pressed="false">
+            <svg viewBox="0 0 120 80" aria-hidden="true"><path d="M60 40L22 16M60 40l38-24M60 40L22 64M60 40l38 24"/><circle cx="60" cy="40" r="7"/><circle cx="22" cy="16" r="5"/><circle cx="98" cy="16" r="5"/><circle cx="22" cy="64" r="5"/><circle cx="98" cy="64" r="5"/></svg>
+            <span><b>星型</b><small>中心调度，结构简单</small></span><i class="mini-meter"><em style="width:34%"></em></i>
+          </button>
+          <button class="topo-card" data-topo="ring" type="button" aria-pressed="false">
+            <svg viewBox="0 0 120 80" aria-hidden="true"><path d="M60 12l34 18v20L60 68 26 50V30z"/><circle cx="60" cy="12" r="5"/><circle cx="94" cy="30" r="5"/><circle cx="94" cy="50" r="5"/><circle cx="60" cy="68" r="5"/><circle cx="26" cy="50" r="5"/><circle cx="26" cy="30" r="5"/></svg>
+            <span><b>环型</b><small>首尾相接，可绕行</small></span><i class="mini-meter"><em style="width:62%"></em></i>
+          </button>
+          <button class="topo-card" data-topo="mesh" type="button" aria-pressed="false">
+            <svg viewBox="0 0 120 80" aria-hidden="true"><path d="M60 12l34 18v20L60 68 26 50V30zM60 12v56M26 30l68 20M94 30L26 50"/><circle cx="60" cy="12" r="5"/><circle cx="94" cy="30" r="5"/><circle cx="94" cy="50" r="5"/><circle cx="60" cy="68" r="5"/><circle cx="26" cy="50" r="5"/><circle cx="26" cy="30" r="5"/><circle cx="60" cy="40" r="5"/></svg>
+            <span><b>网状</b><small>多路径，自动绕行</small></span><i class="mini-meter"><em style="width:94%"></em></i>
+          </button>
+        </div>
+
+        <div class="topo-lab tech-panel" data-reveal>
+          <div class="topo-stage">
+            <div class="topo-stage-head">
+              <span class="mono-label" id="topoLabel">TOPOLOGY / 星型</span>
+              <span class="topo-help">点击连线可切断 · 点击“发送数据包”观察路径</span>
+            </div>
+            <svg id="topoSvg" viewBox="0 0 600 380" role="img" aria-label="网络拓扑交互图"></svg>
+            <div class="topo-legend">
+              <span><i class="legend-dot source"></i>源节点</span>
+              <span><i class="legend-dot target"></i>目标节点</span>
+              <span><i class="legend-line"></i>可用线路</span>
+              <span><i class="legend-line cut"></i>故障线路</span>
+            </div>
+          </div>
+          <aside class="topo-side">
+            <div class="robust">
+              <span>结构健壮性</span><b id="robustValue">34%</b>
+              <div class="robust-bar"><i id="robustBar"></i></div>
+            </div>
+            <p id="topoDesc">所有节点连接到一个中心。管理简单，但中心一旦故障，整张网可能瘫痪。</p>
+            <div class="topo-actions">
+              <button class="btn btn-primary btn-small" id="sendTopo" type="button">发送数据包</button>
+              <button class="btn btn-quiet btn-small" id="cutTopo" type="button">切断一条线路</button>
+              <button class="btn btn-quiet btn-small" id="resetTopo" type="button">恢复网络</button>
+            </div>
+            <div class="topo-result" id="topoResult" aria-live="polite">先选一种结构，再发送数据包。</div>
+            <details class="answer-details">
+              <summary>为什么网状结构更健壮？</summary>
+              <p>网状结构中，节点之间有多条通信线路。当一条线路出现故障时，数据可以切换到别的线路继续传输，因此更难被“切断”。</p>
+            </details>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04 中国答卷 ============ -->
+    <section class="section course1-section" id="china">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">04</div>
+          <div>
+            <div class="section-meta"><span>CHINA / 中国答卷</span><i></i><span>建议 7 分钟</span></div>
+            <h2>从一条 64K 专线，<span class="hl">到 10.92 亿网民</span></h2>
+            <p class="section-dek">点开年份数据，看中国从接入世界到网络强国。</p>
+          </div>
+        </div>
+
+        <div class="china-console tech-panel" data-reveal>
+          <div class="year-rail" id="yearRail" role="tablist" aria-label="中国互联网关键年份">
+            <button class="year-btn is-active" data-index="0" type="button" role="tab" aria-selected="true"><b>1987</b><span>第一封邮件</span></button>
+            <button class="year-btn" data-index="1" type="button" role="tab" aria-selected="false"><b>1994</b><span>全功能接入</span></button>
+            <button class="year-btn" data-index="2" type="button" role="tab" aria-selected="false"><b>1995</b><span>面向社会</span></button>
+            <button class="year-btn" data-index="3" type="button" role="tab" aria-selected="false"><b>2008</b><span>网民第一</span></button>
+            <button class="year-btn" data-index="4" type="button" role="tab" aria-selected="false"><b>2013</b><span>最大零售</span></button>
+            <button class="year-btn" data-index="5" type="button" role="tab" aria-selected="false"><b>2023</b><span>10.92 亿</span></button>
+          </div>
+          <div class="china-screen" id="chinaScreen">
+            <div class="screen-head"><span id="chinaYear">1987</span><span class="screen-tag" id="chinaTag">从 0 到 1</span></div>
+            <div class="china-stat"><b id="chinaStat">1</b><span id="chinaUnit">封</span></div>
+            <h3 id="chinaTitle">中国第一封电子邮件</h3>
+            <p id="chinaDesc">被称为“中国互联网之父”的钱天白发出“越过长城，走向世界”，中国互联网从这里出发。</p>
+            <div class="china-compare" id="chinaCompare" hidden></div>
+            <div class="screen-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <span class="screen-corner tl"></span><span class="screen-corner br"></span>
+          </div>
+        </div>
+        <div class="china-achievements" aria-label="中国互联网建设与创新成就">
+          <span><i>01</i>建成最大的网络实体</span>
+          <span><i>02</i>网民规模世界第一</span>
+          <span><i>03</i>全球最大网络零售市场</span>
+          <span><i>04</i>5G 标准与技术引领</span>
+          <span><i>05</i>北斗系统自主运行</span>
+        </div>
+
+        <div class="china-bottom">
+          <div class="china-card tech-panel" data-reveal>
+            <span class="lab-code">TOP 30 / 全球互联网企业市值</span>
+            <div class="top30-layout">
+              <div class="top30-ring" style="--pct:26.7%">
+                <div class="ring-core"><b>8</b><span>/ 30</span></div>
+              </div>
+              <div class="top30-copy">
+                <h3>中国占 8 席</h3>
+                <p>腾讯、阿里巴巴、拼多多进入前十。数量背后，是技术、应用与市场的共同创新。</p>
+                <div class="company-chips"><span>腾讯</span><span>阿里巴巴</span><span>拼多多</span></div>
+              </div>
+            </div>
+            <small class="card-source">据课件资料 · 全球互联网市值 TOP30 榜</small>
+          </div>
+
+          <div class="china-card tech-panel relay-card" data-reveal>
+            <span class="lab-code">5G / 从跟跑到领跑</span>
+            <div class="relay-track" id="relayTrack">
+              <button class="relay-step is-active" data-g="0" type="button"><span>1G</span><b>空白</b><i></i></button>
+              <button class="relay-step" data-g="1" type="button"><span>2G</span><b>跟随</b><i></i></button>
+              <button class="relay-step" data-g="2" type="button"><span>3G</span><b>突破</b><i></i></button>
+              <button class="relay-step" data-g="3" type="button"><span>4G</span><b>并跑</b><i></i></button>
+              <button class="relay-step" data-g="4" type="button"><span>5G</span><b>领跑</b><i></i></button>
+            </div>
+            <div class="relay-detail">
+              <span id="relayStatus">起步阶段</span>
+              <p id="relayText">技术和产业基础薄弱，移动通信主要依赖国外标准。</p>
+            </div>
+            <div class="relay-foot">
+              <span class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+              <button class="text-btn" id="relayPlay" type="button">自动播放这段逆袭</button>
+            </div>
+          </div>
+
+          <div class="china-card tech-panel beidou-teaser" data-reveal>
+            <span class="lab-code">BEIDOU / 北斗卫星导航系统</span>
+            <div class="teaser-orbit" aria-hidden="true">
+              <span class="planet"></span>
+              <span class="sat s1"></span><span class="sat s2"></span><span class="sat s3"></span>
+              <span class="teaser-ring r1"></span><span class="teaser-ring r2"></span>
+            </div>
+            <h3>导航、外卖、网购……<br>它们都在调用北斗</h3>
+            <p>我国自主建设、独立运行的卫星导航系统，正在为互联网应用提供“位置”这一关键能力。</p>
+            <a class="text-btn" href="#beidou">前往 06 北斗任务 <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05 互联网+ ============ -->
+    <section class="section course1-section" id="plus">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">05</div>
+          <div>
+            <div class="section-meta"><span>INTERNET + / 生活实验室</span><i></i><span>建议 8 分钟</span></div>
+            <h2>当互联网“+”，<span class="hl">生活发生了什么</span></h2>
+            <p class="section-dek">把 6 个应用放进生活场景，再提 1 条创意。</p>
+          </div>
+        </div>
+
+        <div class="plus-lab tech-panel" data-reveal>
+          <div class="plus-head">
+            <div><span class="lab-code">MATCH / 应用归位</span><h3>它，改变了哪一种生活？</h3></div>
+            <div class="plus-progress"><span>已归位</span><b id="plusProgress">0 / 6</b></div>
+          </div>
+          <div class="category-grid" id="categoryGrid">
+            <div class="cat-card" data-cat="food"><div class="cat-head"><span class="cat-glyph">吃</span><span><b>饮食</b><small>从下单到送达</small></span></div><div class="cat-slot" data-cat="food"><span>拖入应用</span></div></div>
+            <div class="cat-card" data-cat="wear"><div class="cat-head"><span class="cat-glyph">穿</span><span><b>穿搭</b><small>从挑选到试衣</small></span></div><div class="cat-slot" data-cat="wear"><span>拖入应用</span></div></div>
+            <div class="cat-card" data-cat="home"><div class="cat-head"><span class="cat-glyph">住</span><span><b>居家</b><small>从设备到空间</small></span></div><div class="cat-slot" data-cat="home"><span>拖入应用</span></div></div>
+            <div class="cat-card" data-cat="travel"><div class="cat-head"><span class="cat-glyph">行</span><span><b>出行</b><small>从出发到抵达</small></span></div><div class="cat-slot" data-cat="travel"><span>拖入应用</span></div></div>
+            <div class="cat-card" data-cat="learn"><div class="cat-head"><span class="cat-glyph">学</span><span><b>学习</b><small>从课堂到云端</small></span></div><div class="cat-slot" data-cat="learn"><span>拖入应用</span></div></div>
+            <div class="cat-card" data-cat="health"><div class="cat-head"><span class="cat-glyph">医</span><span><b>医疗</b><small>从挂号到复诊</small></span></div><div class="cat-slot" data-cat="health"><span>拖入应用</span></div></div>
+          </div>
+          <div class="token-tray-head"><span>应用卡</span><small>拖拽到上方，或“点选应用 → 点击场景”</small></div>
+          <div class="token-tray" id="plusTokens"></div>
+          <div class="plus-insight" id="plusInsight" hidden>
+            <span class="insight-icon">+</span>
+            <div><b>“互联网+”不是简单地把业务搬到网上</b><p>2012 年，“互联网+”理念在国内出现；2015 年写入政府工作报告。它让工业、农业、教育、医疗等传统行业借助互联网完成转型升级。</p></div>
+          </div>
+        </div>
+
+        <div class="idea-lab" data-reveal>
+          <div class="idea-form tech-panel">
+            <span class="lab-code">IDEA LAB / 创意工坊</span>
+            <h3>如果由你来创新，<br>你想解决哪个生活难题？</h3>
+            <div class="prompt-card">
+              <span>今日难题</span>
+              <p id="ideaPrompt">食堂排队太久，怎样让人少等一会儿？</p>
+              <button class="text-btn" id="shufflePrompt" type="button">换一个 ↻</button>
+            </div>
+            <label class="field-label" for="ideaInput">我的“互联网+”点子</label>
+            <textarea id="ideaInput" maxlength="80" rows="3" placeholder="例如：做一个食堂预约小程序，提前点餐、错峰取餐……"></textarea>
+            <div class="field-row">
+              <label class="field-label" for="ideaCat">属于哪个场景</label>
+              <span class="char-count"><b id="ideaCount">0</b> / 80</span>
+            </div>
+            <select id="ideaCat">
+              <option value="food">吃 · 饮食</option>
+              <option value="wear">穿 · 穿搭</option>
+              <option value="home">住 · 居家</option>
+              <option value="travel">行 · 出行</option>
+              <option value="learn">学 · 学习</option>
+              <option value="health">医 · 医疗</option>
+            </select>
+            <div class="idea-submit-row">
+              <span class="idea-team" id="ideaTeamLabel">以 量子队 名义提交</span>
+              <button class="btn btn-primary btn-small" id="ideaSubmit" type="button" disabled>提交创意</button>
+            </div>
+          </div>
+          <div class="idea-wall-wrap">
+            <div class="idea-wall-head">
+              <div><span class="mono-label">CLASS IDEA WALL</span><h3>我们的创意墙</h3></div>
+              <span class="idea-total"><b id="ideaTotal">0</b> 个点子</span>
+            </div>
+            <div class="idea-wall" id="ideaWall"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 06 北斗任务 ============ -->
+    <section class="section course1-section" id="beidou">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">06</div>
+          <div>
+            <div class="section-meta"><span>BEIDOU MISSION / 北斗任务</span><i></i><span>建议 5 分钟</span></div>
+            <h2>三颗卫星，<span class="hl">如何找到你的位置</span></h2>
+            <p class="section-dek">启动 3 颗卫星，点中三环交点完成定位。</p>
+          </div>
+        </div>
+
+        <div class="beidou-grid">
+          <div class="map-panel tech-panel" data-reveal>
+            <div class="map-head">
+              <div><span class="lab-code">MISSION / 定位配送点</span><h3>城市定位实验</h3></div>
+              <span class="map-status" id="mapStatus">等待启动</span>
+            </div>
+            <div class="map-wrap">
+              <svg id="beidouMap" viewBox="0 0 640 420" tabindex="0" role="img" aria-label="北斗三环定位互动地图，请点击三个定位环的交点">
+                <defs>
+                  <pattern id="cityGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+                    <path d="M32 0H0v32" fill="none" stroke="#5ad7ff" stroke-width=".6" opacity=".14"/>
+                  </pattern>
+                  <clipPath id="mapClip"><rect x="0" y="0" width="640" height="420" rx="18"/></clipPath>
+                  <filter id="mapGlow" x="-60%" y="-60%" width="220%" height="220%">
+                    <feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                </defs>
+                <rect width="640" height="420" rx="18" fill="#07131c"/>
+                <g clip-path="url(#mapClip)">
+                  <rect width="640" height="420" fill="url(#cityGrid)"/>
+                  <path d="M-20 310C120 280 180 330 300 300s180-90 360-40" fill="none" stroke="#2b7f9e" stroke-width="26" opacity=".35"/>
+                  <path d="M-20 310C120 280 180 330 300 300s180-90 360-40" fill="none" stroke="#57e8ff" stroke-width="1.5" opacity=".35"/>
+                  <g fill="#0d2634" stroke="#2b7f9e" stroke-width="1" opacity=".9">
+                    <rect x="55" y="170" width="74" height="48" rx="4"/><rect x="156" y="115" width="92" height="60" rx="4"/>
+                    <rect x="278" y="140" width="68" height="88" rx="4"/><rect x="380" y="95" width="86" height="52" rx="4"/>
+                    <rect x="500" y="155" width="80" height="65" rx="4"/><rect x="95" y="250" width="63" height="42" rx="4"/>
+                    <rect x="200" y="235" width="80" height="55" rx="4"/><rect x="335" y="260" width="90" height="45" rx="4"/>
+                    <rect x="460" y="255" width="74" height="50" rx="4"/><rect x="265" y="330" width="70" height="45" rx="4"/>
+                  </g>
+                  <g fill="#1b4458" opacity=".8">
+                    <circle cx="94" cy="150" r="3"/><circle cx="390" cy="180" r="3"/><circle cx="520" cy="315" r="3"/><circle cx="150" cy="345" r="3"/>
+                  </g>
+                  <g id="ringLayer" opacity="0">
+                    <circle class="sat-ring ring-a" id="ring1" cx="92" cy="76" r="0"/>
+                    <circle class="sat-ring ring-b" id="ring2" cx="560" cy="94" r="0"/>
+                    <circle class="sat-ring ring-c" id="ring3" cx="330" cy="370" r="0"/>
+                  </g>
+                  <g class="satellite sat-1" transform="translate(92 76)"><circle class="sat-halo" r="18"/><rect x="-8" y="-8" width="16" height="16" rx="2"/><path d="M-15-5h-7M15-5h7M-15 5h-7M15 5h7"/><text x="22" y="4">北斗-1</text></g>
+                  <g class="satellite sat-2" transform="translate(560 94)"><circle class="sat-halo" r="18"/><rect x="-8" y="-8" width="16" height="16" rx="2"/><path d="M-15-5h-7M15-5h7M-15 5h-7M15 5h7"/><text x="22" y="4">北斗-2</text></g>
+                  <g class="satellite sat-3" transform="translate(330 370)"><circle class="sat-halo" r="18"/><rect x="-8" y="-8" width="16" height="16" rx="2"/><path d="M-15-5h-7M15-5h7M-15 5h-7M15 5h7"/><text x="22" y="4">北斗-3</text></g>
+                  <g id="rippleLayer"></g>
+                  <g id="targetMarker" opacity="0"></g>
+                </g>
+                <rect x=".75" y=".75" width="638.5" height="418.5" rx="18" fill="none" stroke="#57e8ff" stroke-opacity=".24"/>
+              </svg>
+              <div class="map-scale"><i></i><span>500 m</span></div>
+              <div class="map-coords" id="mapCoords">X -- / Y --</div>
+            </div>
+            <div class="map-toolbar">
+              <button class="btn btn-primary btn-small" id="locateBtn" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="2"/></svg>
+                <span>启动卫星定位</span>
+              </button>
+              <button class="btn btn-quiet btn-small" id="newTargetBtn" type="button">换一个目标</button>
+              <span class="map-feedback" id="beidouFeedback" aria-live="polite">点击“启动卫星定位”，获取三组距离数据。</span>
+            </div>
+          </div>
+
+          <aside class="beidou-side" data-reveal>
+            <div class="beidou-fact tech-panel">
+              <span class="lab-code">BEIDOU / 中国北斗</span>
+              <h3>自主建设 · 独立运行</h3>
+              <p>北斗卫星导航系统已在交通运输、农林渔业、水文监测、气象测报、通信授时、电力调度、救灾减灾、公共安全等领域广泛应用。</p>
+              <div class="fact-tags"><span>定位</span><span>导航</span><span>授时</span><span>短报文</span></div>
+            </div>
+            <div class="app-flip-list">
+              <button class="app-flip" type="button" aria-pressed="false">
+                <span class="flip-inner">
+                  <span class="flip-front"><i>行</i><b>网约车</b><small>点击查看北斗的作用</small></span>
+                  <span class="flip-back"><b>北斗在做什么？</b><p>定位行程的起点和终点，辅助约车系统完成车辆调配、路线规划、显示行程。</p></span>
+                </span>
+              </button>
+              <button class="app-flip" type="button" aria-pressed="false">
+                <span class="flip-inner">
+                  <span class="flip-front"><i>购</i><b>网络购物</b><small>点击查看北斗的作用</small></span>
+                  <span class="flip-back"><b>北斗在做什么？</b><p>定位购买者所在的城市区域，辅助购物系统完成商品调配、物流追踪。</p></span>
+                </span>
+              </button>
+              <button class="app-flip" type="button" aria-pressed="false">
+                <span class="flip-inner">
+                  <span class="flip-front"><i>食</i><b>网上外卖</b><small>点击查看北斗的作用</small></span>
+                  <span class="flip-back"><b>北斗在做什么？</b><p>定位购买者和配送人员的位置，辅助外卖系统完成人员分派、显示配送进度。</p></span>
+                </span>
+              </button>
+            </div>
+            <p class="beidou-note">二维示意：三颗卫星的距离圆交汇，就能锁定一个平面位置。真实定位还需要考虑时间与三维坐标。</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 07 闯关 ============ -->
+    <section class="section course1-section" id="challenge">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">07</div>
+          <div>
+            <div class="section-meta"><span>FINAL CHALLENGE / 创新闯关</span><i></i><span>建议 3 分钟</span></div>
+            <h2>把今天的发现，<span class="hl">变成你的答案</span></h2>
+            <p class="section-dek">答 8 道题，提交课堂回声，完成第一课。</p>
+          </div>
+        </div>
+
+        <div class="quiz-layout" data-reveal>
+          <div class="quiz-panel tech-panel">
+            <div class="quiz-head">
+              <div><span class="mono-label">CHALLENGE / QUIZ</span><h3 id="quizHeadTitle">知识闯关</h3></div>
+              <span class="quiz-count"><b id="quizIndex">01</b> / 08</span>
+            </div>
+            <div class="quiz-progress"><i id="quizProgressBar"></i></div>
+            <div id="quizContent">
+              <p class="quiz-question" id="quizQuestion">正在加载题目…</p>
+              <div class="quiz-options" id="quizOptions"></div>
+              <div class="quiz-explain" id="quizExplain" aria-live="polite" hidden></div>
+              <div class="quiz-actions"><button class="btn btn-primary btn-small" id="quizNext" type="button" hidden>下一题 →</button></div>
+            </div>
+          </div>
+          <aside class="quiz-side">
+            <div class="current-squad tech-panel">
+              <span class="lab-code">CURRENT SQUAD</span>
+              <div class="squad-now"><i id="quizTeamDot"></i><b id="quizTeamName">量子队</b><span id="quizTeamScore">0</span></div>
+              <p>答题前可在顶部切换小队。答对一题，当前小队 +10 探索值。</p>
+            </div>
+            <div class="badge-case tech-panel">
+              <span class="lab-code">BADGE CASE / 本课徽章</span>
+              <div class="badge-list" id="quizBadgeList"><span class="badge-empty">完成挑战，点亮徽章</span></div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="exit-ticket tech-panel" data-reveal>
+          <div class="exit-head">
+            <div><span class="lab-code">EXIT TICKET / 课堂回声</span><h3>带走一个想法，留下一个问题</h3></div>
+            <span class="exit-saved" id="exitSaved" hidden>已收录到本机</span>
+          </div>
+          <form id="exitForm">
+            <label><span>我学会了</span><textarea id="exitLearn" rows="2" maxlength="120" placeholder="例如：网状结构有多条路径，一条断了还能绕行。"></textarea></label>
+            <label><span>我还想知道</span><textarea id="exitWonder" rows="2" maxlength="120" placeholder="例如：6G 会让互联网变成什么样？"></textarea></label>
+            <label><span>我的创意</span><textarea id="exitIdea" rows="2" maxlength="120" placeholder="例如：用北斗给校园里的共享单车做电子围栏。"></textarea></label>
+            <button class="btn btn-primary btn-small" type="submit">提交课堂回声</button>
+          </form>
+        </div>
+
+        <div class="summary-grid" data-reveal>
+          <article><span>01 / 一条主线</span><h3>四个阶段</h3><p>诞生 → 形成 → 互联 → 高速网络。每一次跃迁，都来自连接方式的创新。</p></article>
+          <article><span>02 / 一个结构</span><h3>网状更健壮</h3><p>节点之间有多条线路，一条故障时可以切换路径，数据仍能抵达。</p></article>
+          <article><span>03 / 一份答卷</span><h3>中国创新</h3><p>从 64K 专线到 10.92 亿网民，从“互联网+”到 5G、北斗，创新仍在继续。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 第一课 → 第二课 衔接 ============ -->
+    <section class="lesson-bridge lesson2-intro" id="lesson2" aria-labelledby="bridgeTitle">
+      <div class="bridge-grid" aria-hidden="true"></div>
+      <div class="bridge-inner">
+        <div class="bridge-copy" data-reveal>
+          <div class="bridge-kicker"><span>LESSON 02</span><i></i><span>独立课程 · 6 个任务</span></div>
+          <h2 id="bridgeTitle">应用，正在<span class="hl">重新定义生活</span>。</h2>
+          <p>内容更丰富，操作更简单，一个 App 装下多种服务。6 个任务，看懂应用新特征。</p>
+          <div class="bridge-traits">
+            <span><b>图文声像</b><small>内容形式</small></span>
+            <span><b>图形界面</b><small>交互方式</small></span>
+            <span><b>应用融合</b><small>功能特征</small></span>
+          </div>
+          <div class="bridge-actions">
+            <button class="btn btn-primary" id="enterLesson2" type="button">
+              <span>开始第 01 站</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            </button>
+            <span class="bridge-status" id="bridgeStatus">第二课可独立完成</span>
+          </div>
+          <div class="bridge-meter" aria-hidden="true"><i id="bridgeMeter"></i></div>
+        </div>
+
+        <div class="bridge-visual" aria-hidden="true">
+          <div class="bridge-ring ring-1"></div>
+          <div class="bridge-ring ring-2"></div>
+          <div class="bridge-ring ring-3"></div>
+          <div class="bridge-phone">
+            <div class="bridge-phone-top"><span>09:41</span><i></i><i></i><i></i></div>
+            <div class="bridge-apps">
+              <span><b>⌖</b><small>地图</small></span>
+              <span><b>◈</b><small>打车</small></span>
+              <span><b>▤</b><small>外卖</small></span>
+              <span><b>¥</b><small>支付</small></span>
+              <span><b>♫</b><small>音乐</small></span>
+              <span><b>▶</b><small>视频</small></span>
+            </div>
+            <div class="bridge-phone-core"><i></i><b>SUPER APP</b><small>ONE ENTRY · MANY SERVICES</small></div>
+          </div>
+          <div class="bridge-scan"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============ 第二课 01 形态跃迁 ============ -->
+    <section class="section lesson2-section" id="l2-content" aria-labelledby="l2ContentTitle">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">01</div>
+          <div>
+            <div class="section-meta"><span>LESSON 02 / 形态跃迁</span><i></i><span>建议 5 分钟</span></div>
+            <h2 id="l2ContentTitle">从一行字，到<span class="hl">一整个世界</span></h2>
+            <p class="section-dek">拖动滑块，看内容从纯文本变成图文声像。</p>
+          </div>
+        </div>
+        <div class="l2-mount" id="l2ContentMount" data-reveal></div>
+      </div>
+    </section>
+
+    <!-- ============ 第二课 02 界面革命 ============ -->
+    <section class="section lesson2-section" id="l2-ui" aria-labelledby="l2UiTitle">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">02</div>
+          <div>
+            <div class="section-meta"><span>LESSON 02 / 界面革命</span><i></i><span>建议 6 分钟</span></div>
+            <h2 id="l2UiTitle">从记命令，到<span class="hl">点一下</span></h2>
+            <p class="section-dek">同一任务，用命令和图标各做一次。</p>
+          </div>
+        </div>
+        <div class="l2-mount" id="l2UiMount" data-reveal></div>
+      </div>
+    </section>
+
+    <!-- ============ 第二课 03 超级融合 ============ -->
+    <section class="section lesson2-section" id="l2-fusion" aria-labelledby="l2FusionTitle">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">03</div>
+          <div>
+            <div class="section-meta"><span>LESSON 02 / 超级融合</span><i></i><span>建议 7 分钟</span></div>
+            <h2 id="l2FusionTitle">一个入口，<span class="hl">装下生活</span></h2>
+            <p class="section-dek">把 6 项服务装进一个 App，理解应用融合。</p>
+          </div>
+        </div>
+        <div class="l2-mount" id="l2FusionMount" data-reveal></div>
+      </div>
+    </section>
+
+    <!-- ============ 第二课 04 应用图谱 ============ -->
+    <section class="section lesson2-section" id="l2-atlas" aria-labelledby="l2AtlasTitle">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">04</div>
+          <div>
+            <div class="section-meta"><span>LESSON 02 / 应用图谱</span><i></i><span>建议 7 分钟</span></div>
+            <h2 id="l2AtlasTitle">给 12 个应用，<span class="hl">找到组织</span></h2>
+            <p class="section-dek">把 12 个应用放进 4 类场景。</p>
+          </div>
+        </div>
+        <div class="l2-mount" id="l2AtlasMount" data-reveal></div>
+      </div>
+    </section>
+
+    <!-- ============ 第二课 05 数据洞察 ============ -->
+    <section class="section lesson2-section" id="l2-data" aria-labelledby="l2DataTitle">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">05</div>
+          <div>
+            <div class="section-meta"><span>LESSON 02 / 数据洞察</span><i></i><span>建议 6 分钟</span></div>
+            <h2 id="l2DataTitle">用数据，<span class="hl">看见中国应用</span></h2>
+            <p class="section-dek">读 4 组数据，看中国应用体量。</p>
+          </div>
+        </div>
+        <div class="l2-mount" id="l2DataMount" data-reveal></div>
+      </div>
+    </section>
+
+    <!-- ============ 第二课 06 数字生活 ============ -->
+    <section class="section lesson2-section" id="l2-life" aria-labelledby="l2LifeTitle">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">06</div>
+          <div>
+            <div class="section-meta"><span>LESSON 02 / 数字生活</span><i></i><span>建议 8 分钟</span></div>
+            <h2 id="l2LifeTitle">技术给便利，<span class="hl">选择给答案</span></h2>
+            <p class="section-dek">做 5 个生活选择，写下 1 条承诺。</p>
+          </div>
+        </div>
+        <div class="l2-mount" id="l2LifeMount" data-reveal></div>
+      </div>
+    </section>
+
+    <!-- ============ 八年级第 9 课 · 开场 ============ -->
+    <section class="lesson-bridge lesson3-intro" id="lesson3" aria-labelledby="lesson3Title">
+      <div class="bridge-grid" aria-hidden="true"></div>
+      <div class="bridge-inner">
+        <div class="bridge-copy" data-reveal>
+          <div class="bridge-kicker"><span>GRADE 8 · LESSON 09</span><i></i><span>第二单元 · 万物互联有协议</span></div>
+          <h2 id="lesson3Title">万物互联，<span class="hl">协议先行</span>。</h2>
+          <p>互联网的数据怎么进入物联设备？HTTP 还能撑住吗？6 个任务，找到答案。</p>
+          <div class="bridge-traits">
+            <span><b>API</b><small>从服务器取数据</small></span>
+            <span><b>HTTP</b><small>请求与响应</small></span>
+            <span><b>物联协议</b><small>低功耗 · 低带宽 · 低延时</small></span>
+          </div>
+          <div class="bridge-actions">
+            <button class="btn btn-primary" id="enterLesson3" type="button">
+              <span>开始第 01 站</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            </button>
+            <span class="bridge-status" id="l3BridgeStatus">6 个任务 · 可独立完成</span>
+          </div>
+          <div class="bridge-meter" aria-hidden="true"><i id="l3BridgeMeter"></i></div>
+        </div>
+
+        <div class="l3-bridge-visual" data-reveal aria-hidden="true">
+          <div class="l3-orbit l3-orbit-a"></div>
+          <div class="l3-orbit l3-orbit-b"></div>
+          <div class="l3-cloud">
+            <span>API</span>
+            <b>互联网服务器</b>
+            <small>天气 · 路况 · 新闻</small>
+          </div>
+          <div class="l3-device l3-device-a"><i>⌁</i><span>传感器</span></div>
+          <div class="l3-device l3-device-b"><i>▤</i><span>手表</span></div>
+          <div class="l3-device l3-device-c"><i>◉</i><span>汽车</span></div>
+          <div class="l3-packet l3-packet-a">GET</div>
+          <div class="l3-packet l3-packet-b">200</div>
+          <div class="l3-protocol-label">HTTP / API</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 八年级第 9 课 · 6 站 ============ -->
+    <section class="section lesson3-section" id="l3-data" aria-labelledby="l3DataTitle">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">01</div>
+          <div>
+            <div class="section-meta"><span>GRADE 8 / 数据接力</span><i></i><span>建议 5 分钟</span></div>
+            <h2 id="l3DataTitle">物联设备的数据，<span class="hl">从哪里来？</span></h2>
+            <p class="section-dek">把 8 条数据分到互联网或设备自采。</p>
+          </div>
+        </div>
+        <div class="l3-mount" id="l3DataMount" data-reveal></div>
+      </div>
+    </section>
+
+    <section class="section lesson3-section" id="l3-api" aria-labelledby="l3ApiTitle">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">02</div>
+          <div>
+            <div class="section-meta"><span>GRADE 8 / API 取数</span><i></i><span>建议 6 分钟</span></div>
+            <h2 id="l3ApiTitle">服务器不开门，<span class="hl">也能取数据</span></h2>
+            <p class="section-dek">调用天气 API，取出 3 个观测字段。</p>
+          </div>
+        </div>
+        <div class="l3-mount" id="l3ApiMount" data-reveal></div>
+      </div>
+    </section>
+
+    <section class="section lesson3-section" id="l3-http" aria-labelledby="l3HttpTitle">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">03</div>
+          <div>
+            <div class="section-meta"><span>GRADE 8 / HTTP 快线</span><i></i><span>建议 6 分钟</span></div>
+            <h2 id="l3HttpTitle">一次请求，<span class="hl">一次响应</span></h2>
+            <p class="section-dek">组好 GET 请求，排出 HTTP 的三步。</p>
+          </div>
+        </div>
+        <div class="l3-mount" id="l3HttpMount" data-reveal></div>
+      </div>
+    </section>
+
+    <section class="section lesson3-section" id="l3-limit" aria-labelledby="l3LimitTitle">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">04</div>
+          <div>
+            <div class="section-meta"><span>GRADE 8 / 负载实验</span><i></i><span>建议 7 分钟</span></div>
+            <h2 id="l3LimitTitle">500 台设备一起问，<span class="hl">服务器扛得住吗？</span></h2>
+            <p class="section-dek">运行轮询实验，找出 3 个瓶颈。</p>
+          </div>
+        </div>
+        <div class="l3-mount" id="l3LimitMount" data-reveal></div>
+      </div>
+    </section>
+
+    <section class="section lesson3-section" id="l3-feature" aria-labelledby="l3FeatureTitle">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">05</div>
+          <div>
+            <div class="section-meta"><span>GRADE 8 / 协议匹配</span><i></i><span>建议 5 分钟</span></div>
+            <h2 id="l3FeatureTitle">物联协议，<span class="hl">要解决什么？</span></h2>
+            <p class="section-dek">把 4 个要求匹配到真实场景。</p>
+          </div>
+        </div>
+        <div class="l3-mount" id="l3FeatureMount" data-reveal></div>
+      </div>
+    </section>
+
+    <section class="section lesson3-section" id="l3-choice" aria-labelledby="l3ChoiceTitle">
+      <div class="section-inner">
+        <div class="section-head" data-reveal>
+          <div class="section-index">06</div>
+          <div>
+            <div class="section-meta"><span>GRADE 8 / 协议决策</span><i></i><span>建议 6 分钟</span></div>
+            <h2 id="l3ChoiceTitle">HTTP 仍沿用，<span class="hl">但不唯一</span></h2>
+            <p class="section-dek">答 3 题，为校园农场选协议。</p>
+          </div>
+        </div>
+        <div class="l3-mount" id="l3ChoiceMount" data-reveal></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <span class="footer-mark">IT / 19</span>
+      <p>信息科技互动课堂 · 三课独立版 · 七 / 八年级</p>
+    </div>
+    <div class="footer-meta">
+      <span>内容依据：七年级第一单元两课 + 八年级上册第二单元第 9 课《互联协议仍沿用》 · 2024 人教版</span>
+      <span>课堂互动网站 · 三课独立闯关 · 数据保存在本机浏览器</span>
+    </div>
+  </footer>
+
+  <!-- ============ 教师控制台 ============ -->
+  <div class="teacher-scrim" id="teacherScrim"></div>
+  <aside class="teacher-panel" id="teacherPanel" aria-label="教师控制台" aria-hidden="true">
+    <div class="teacher-head">
+      <div><span class="mono-label">TEACHER CONSOLE</span><h2>教师控制台</h2></div>
+      <button class="icon-btn" id="teacherClose" type="button" aria-label="关闭教师控制台">×</button>
+    </div>
+    <div class="teacher-body">
+      <section class="teacher-section">
+        <h3>课堂视图</h3>
+        <div class="teacher-buttons">
+          <button class="btn btn-quiet btn-small" id="fullscreenBtn" type="button">进入全屏</button>
+          <button class="btn btn-quiet btn-small" id="soundTogglePanel" type="button">音效：开</button>
+        </div>
+        <div class="teacher-jumps" id="teacherJumps">
+          <span class="teacher-jump-label">第一课</span>
+          <a href="#origin">01 网之初</a><a href="#timeline">02 时光轴</a><a href="#topology">03 结构室</a>
+          <a href="#china">04 中国卷</a><a href="#plus">05 互联网+</a><a href="#beidou">06 北斗</a><a href="#challenge">07 闯关</a>
+          <span class="teacher-jump-label">第二课</span>
+          <a href="#l2-content">01 形态跃迁</a><a href="#l2-ui">02 界面革命</a><a href="#l2-fusion">03 超级融合</a>
+          <a href="#l2-atlas">04 应用图谱</a><a href="#l2-data">05 数据洞察</a><a href="#l2-life">06 数字生活</a>
+          <span class="teacher-jump-label">八年级第9课</span>
+          <a href="#l3-data">01 数据接力</a><a href="#l3-api">02 API 取数</a><a href="#l3-http">03 HTTP 快线</a>
+          <a href="#l3-limit">04 负载实验</a><a href="#l3-feature">05 协议匹配</a><a href="#l3-choice">06 协议决策</a>
+        </div>
+      </section>
+      <section class="teacher-section">
+        <h3>小队探索值</h3>
+        <div class="score-adjust" id="scoreAdjust">
+          <div data-team="q" style="--team-color:#57e8ff"><span>量子队</span><b class="teacher-score">0</b><button data-delta="-5" type="button">−5</button><button data-delta="5" type="button">+5</button></div>
+          <div data-team="s" style="--team-color:#a7ff6a"><span>星链队</span><b class="teacher-score">0</b><button data-delta="-5" type="button">−5</button><button data-delta="5" type="button">+5</button></div>
+          <div data-team="p" style="--team-color:#ffc857"><span>光子队</span><b class="teacher-score">0</b><button data-delta="-5" type="button">−5</button><button data-delta="5" type="button">+5</button></div>
+          <div data-team="d" style="--team-color:#ff6ec7"><span>深蓝队</span><b class="teacher-score">0</b><button data-delta="-5" type="button">−5</button><button data-delta="5" type="button">+5</button></div>
+        </div>
+      </section>
+      <section class="teacher-section">
+        <h3>已解锁徽章</h3>
+        <div class="badge-list teacher-badges" id="teacherBadges"><span class="badge-empty">暂无</span></div>
+      </section>
+      <section class="teacher-section">
+        <h3>课堂工具</h3>
+        <div class="teacher-tools">
+          <button class="btn btn-quiet btn-small" id="clearIdeasBtn" type="button">清空创意墙</button>
+          <button class="btn btn-danger btn-small" id="resetAllBtn" type="button">重置三课数据</button>
+        </div>
+        <p class="teacher-shortcuts">快捷键：<b>T</b> 教师台 · <b>F</b> 全屏 · <b>M</b> 音效 · <b>Esc</b> 关闭</p>
+      </section>
+    </div>
+  </aside>
+
+  <!-- ============ 本课任务弹窗 ============ -->
+  <dialog class="modal" id="missionDialog" aria-labelledby="missionTitle">
+    <div class="modal-head">
+      <div><span class="mono-label">MISSION BRIEF / 三课任务</span><h2 id="missionTitle">三课独立，每课做什么？</h2></div>
+      <button class="modal-close" data-close-dialog type="button" aria-label="关闭">×</button>
+    </div>
+    <div class="mission-grid mission-grid-three">
+      <article><span>七年级 01</span><h3>互联网发展靠创新</h3><p>7 个任务：网络结构、时间轴、中国创新。</p></article>
+      <article><span>七年级 02</span><h3>互联网应用新特征</h3><p>6 个任务：内容、界面、应用融合。</p></article>
+      <article><span>八年级 09</span><h3>互联协议仍沿用</h3><p>6 个任务：互联网数据、API、HTTP、物联协议。</p></article>
+    </div>
+    <div class="mission-note"><b>课堂玩法</b><span>开始页任选一课；每课完成上一站，才解锁下一站。互动为当前小队加分，顶部可切换小队。</span></div>
+  </dialog>
+
+  <!-- ============ 通用确认弹窗 ============ -->
+  <dialog class="modal modal-confirm" id="confirmDialog" aria-labelledby="confirmTitle">
+    <div class="modal-head">
+      <div><span class="mono-label">PLEASE CONFIRM</span><h2 id="confirmTitle">确认操作</h2></div>
+      <button class="modal-close" data-close-dialog type="button" aria-label="关闭">×</button>
+    </div>
+    <p class="confirm-message" id="confirmMessage"></p>
+    <div class="confirm-actions">
+      <button class="btn btn-quiet btn-small" id="confirmNo" type="button">取消</button>
+      <button class="btn btn-danger btn-small" id="confirmYes" type="button">确认</button>
+    </div>
+  </dialog>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="false"></div>
+
+  <noscript><div class="noscript">本课堂互动网站需要启用 JavaScript 才能运行。</div></noscript>
+
+  <script src="assets/app.js?v=20261108-g8i" defer></script>
+  <script src="assets/lesson2.js?v=20261108-g8i" defer></script>
+  <script src="assets/lesson3.js?v=20261108-g8i" defer></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
