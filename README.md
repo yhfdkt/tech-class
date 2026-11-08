@@ -20,19 +20,29 @@
 
 ## 在线访问（手机微信 / 电脑浏览器）
 
-**课堂在线入口：** <https://afford-nutrition-airline-leslie.trycloudflare.com>
+**永久在线入口：** <https://yhfdkt.github.io/tech-class/>
 
 - 手机微信可直接打开；若出现“非微信官方网页”提示，点“继续访问”。
 - 电脑浏览器（Edge / Chrome）直接访问同一链接。
 - 课堂扫码入口：[`preview/11-link-qr.png`](preview/11-link-qr.png)
 
-> 该入口由课堂电脑通过 Cloudflare 临时托管；电脑休眠、关机或网络中断后可能失效。失效时使用压缩包离线版：双击 `打开课堂网站.bat`，或直接打开 `index.html`。
+> 该入口已发布在 **GitHub Pages**，电脑关机、休眠都不影响访问。若 GitHub Pages 暂时构建中，请等 1–2 分钟；离线备份仍可使用压缩包里的 `打开课堂网站.bat`。
 >
 > 每个浏览器独立保存探索值。学生手机端适合各自探索，**小队总分不会跨设备同步**；全班计分请固定在教师电脑/投屏端。
 
 ---
 
 ## 长期固定链接（电脑关机也能打开）
+
+**已发布到 GitHub Pages：** <https://yhfdkt.github.io/tech-class/>
+
+GitHub 仓库：<https://github.com/yhfdkt/tech-class>
+
+> 仓库根目录需要有 `index.html`、`compat.html`、`assets/` 和 `.nojekyll`。如果 GitHub Pages 只上传了 HTML 而漏传 `assets/`，页面会没有样式和图片；可直接使用“GitHub-Pages单文件修正包.zip”里的 `index.html` 替换，单文件已内嵌全部 CSS、JS、13 张照片，不再依赖 assets 目录。
+
+---
+
+## 其他静态托管方式
 
 现在页面里的 `trycloudflare.com` 链接由**这台电脑**上的本地服务器 + 临时隧道提供；电脑关机、休眠或断网后就会失效。
 
@@ -556,6 +566,8 @@ web/
 - 2024 人教版《信息科技》八年级上册第二单元第 9 课
 - 课件《9 互联协议仍沿用》
 - 《中国互联网络发展状况统计报告》（第 54 次，2024 年 6 月）
+
+
 
 
 
