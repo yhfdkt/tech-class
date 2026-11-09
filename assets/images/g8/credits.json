@@ -1,0 +1,145 @@
+[
+  {
+    "key": "speaker",
+    "title": "File:Sonos PLAY 1 wireless speaker.jpg",
+    "artist": "Robert Wetzlmayr",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Sonos_PLAY_1_wireless_speaker.jpg",
+    "file": "assets/images/g8/speaker.webp",
+    "bytes": 115540,
+    "width": 1400,
+    "height": 933
+  },
+  {
+    "key": "watch",
+    "title": "File:Smartwatch-828786.jpg",
+    "artist": "Crew",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Smartwatch-828786.jpg",
+    "file": "assets/images/g8/watch.webp",
+    "bytes": 51810,
+    "width": 1400,
+    "height": 933
+  },
+  {
+    "key": "phone",
+    "title": "File:Black smartphone in hand (Unsplash).jpg",
+    "artist": "Dennis Cortés cortes",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Black_smartphone_in_hand_(Unsplash).jpg",
+    "file": "assets/images/g8/phone.webp",
+    "bytes": 40386,
+    "width": 1400,
+    "height": 933
+  },
+  {
+    "key": "car",
+    "title": "File:Smartphone mounted on car dashboard during a drive in a modern vehicle with a focus on navigation use.jpg",
+    "artist": "Shixart1985",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Smartphone_mounted_on_car_dashboard_during_a_drive_in_a_modern_vehicle_with_a_focus_on_navigation_use.jpg",
+    "file": "assets/images/g8/car.webp",
+    "bytes": 34260,
+    "width": 1400,
+    "height": 933
+  },
+  {
+    "key": "weather",
+    "title": "File:Weather Station USDA.jpg",
+    "artist": "USDA photo by Scott Bauer. Image Number K7688-7",
+    "license": "Public domain",
+    "page": "https://commons.wikimedia.org/wiki/File:Weather_Station_USDA.jpg",
+    "file": "assets/images/g8/weather.webp",
+    "bytes": 66292,
+    "width": 1400,
+    "height": 952
+  },
+  {
+    "key": "server",
+    "title": "File:BalticServers data center.jpg",
+    "artist": "BalticServers.com",
+    "license": "CC BY-SA 3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:BalticServers_data_center.jpg",
+    "file": "assets/images/g8/server.webp",
+    "bytes": 141336,
+    "width": 1400,
+    "height": 930
+  },
+  {
+    "key": "switch",
+    "title": "File:DLink switches 2016.jpg",
+    "artist": "MSDN.WhiteKnight",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:DLink_switches_2016.jpg",
+    "file": "assets/images/g8/switch.webp",
+    "bytes": 135318,
+    "width": 1400,
+    "height": 1050
+  },
+  {
+    "key": "water",
+    "title": "File:WMBUS Water Meter for submetering.jpg",
+    "artist": "Boutboul",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:WMBUS_Water_Meter_for_submetering.jpg",
+    "file": "assets/images/g8/water.webp",
+    "bytes": 54236,
+    "width": 1050,
+    "height": 1400
+  },
+  {
+    "key": "soil",
+    "title": "File:Installation of soil sensors.jpg",
+    "artist": "UBC Micrometeorology from Vancouver, Canada",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Installation_of_soil_sensors.jpg",
+    "file": "assets/images/g8/soil.webp",
+    "bytes": 392332,
+    "width": 1400,
+    "height": 1050
+  },
+  {
+    "key": "robot",
+    "title": "File:Robot arm operates machine in factory setting.jpg",
+    "artist": "Shixart1985",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Robot_arm_operates_machine_in_factory_setting.jpg",
+    "file": "assets/images/g8/robot.webp",
+    "bytes": 114884,
+    "width": 1400,
+    "height": 932
+  },
+  {
+    "key": "home",
+    "title": "File:Person holds smart thermostat displaying room temperature inside a home.jpg",
+    "artist": "Shixart1985",
+    "license": "CC BY 2.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Person_holds_smart_thermostat_displaying_room_temperature_inside_a_home.jpg",
+    "file": "assets/images/g8/home.webp",
+    "bytes": 28752,
+    "width": 1400,
+    "height": 933
+  },
+  {
+    "key": "greenhouse",
+    "title": "File:Small greenhouse with grapevines escaping.jpg",
+    "artist": "W.carter",
+    "license": "CC0",
+    "page": "https://commons.wikimedia.org/wiki/File:Small_greenhouse_with_grapevines_escaping.jpg",
+    "file": "assets/images/g8/greenhouse.webp",
+    "bytes": 307474,
+    "width": 1400,
+    "height": 881
+  },
+  {
+    "key": "farm",
+    "title": "File:Farm Irrigation Near Encampment, Wyoming.jpg",
+    "artist": "Tony Webster",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Farm_Irrigation_Near_Encampment,_Wyoming.jpg",
+    "file": "assets/images/g8/farm.webp",
+    "bytes": 381134,
+    "width": 1400,
+    "height": 870
+  }
+]

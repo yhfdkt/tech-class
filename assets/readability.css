@@ -1,0 +1,865 @@
+/* ==========================================================================
+   Readability + independent-course overrides
+   Loaded after styles.css / lesson2.css.
+   ========================================================================== */
+
+/* --- 三课独立：只显示当前课程 ------------------------------------------- */
+body[data-course="2"] #home,
+body[data-course="2"] .course1-section,
+body[data-course="2"] #lesson3,
+body[data-course="2"] .lesson3-section {
+  display: none !important;
+}
+
+body[data-course="1"] #lesson2,
+body[data-course="1"] .lesson2-section,
+body[data-course="1"] #lesson3,
+body[data-course="1"] .lesson3-section {
+  display: none !important;
+}
+
+body[data-course="3"] #home,
+body[data-course="3"] .course1-section,
+body[data-course="3"] #lesson2,
+body[data-course="3"] .lesson2-section {
+  display: none !important;
+}
+
+/* --- 启动页选课 --------------------------------------------------------- */
+.launch-courses {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 26px;
+  max-width: 560px;
+}
+
+.launch-course {
+  position: relative;
+  padding: 14px 16px 13px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: rgba(4, 13, 20, .58);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.launch-course:hover {
+  border-color: var(--cyan);
+  transform: translateY(-2px);
+}
+
+.launch-course.is-active {
+  border-color: var(--lime);
+  background: linear-gradient(140deg, rgba(183, 255, 114, .12), rgba(87, 232, 255, .05));
+  box-shadow: inset 0 0 0 1px rgba(183, 255, 114, .18);
+}
+
+.launch-course > span {
+  color: var(--cyan);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+
+.launch-course > b {
+  display: block;
+  margin-top: 5px;
+  font-size: 17px;
+  letter-spacing: -.02em;
+}
+
+.launch-course > small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.launch-course.is-active > span {
+  color: var(--lime);
+}
+
+.launch-course.is-active::after {
+  content: "✓";
+  position: absolute;
+  top: 12px;
+  right: 13px;
+  color: var(--lime);
+  font-family: var(--mono);
+  font-size: 14px;
+}
+
+.launch-main,
+.launch-courses,
+.launch-course,
+.launch-teams,
+.team-choice {
+  min-width: 0;
+}
+
+.launch-teams {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 761px) {
+  .launch-panel {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .launch-panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 761px) and (max-width: 900px) {
+  .launch-teams {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- 清晰任务步骤：每一站顶部的任务卡 ----------------------------------- */
+.mission-gate {
+  align-items: flex-start;
+  padding: 16px 18px;
+}
+
+.gate-copy {
+  gap: 7px;
+}
+
+.gate-kicker {
+  font-size: 10px;
+}
+
+.gate-copy b {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.gate-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 18px;
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gate-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.gate-step > i {
+  display: grid;
+  flex: 0 0 auto;
+  width: 19px;
+  height: 19px;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-style: normal;
+}
+
+.gate-step.is-done {
+  color: var(--text);
+}
+
+.gate-step.is-done > i {
+  border-color: var(--lime);
+  background: rgba(183, 255, 114, .16);
+  color: var(--lime);
+}
+
+.gate-state {
+  font-size: 12px;
+}
+
+/* --- 基础字体 ----------------------------------------------------------- */
+body {
+  font-size: 18px;
+}
+
+main p,
+.modal p,
+.teacher-panel p {
+  font-size: 15px !important;
+  line-height: 1.75;
+}
+
+.section-dek {
+  max-width: 76ch;
+  font-size: 16px !important;
+  line-height: 1.75;
+}
+
+.hero-lead,
+.launch-lead {
+  font-size: 16px !important;
+  line-height: 1.8;
+}
+
+.launch-unit {
+  font-size: 14px;
+}
+
+.launch-facts span {
+  font-size: 12px;
+}
+
+.launch-tip {
+  font-size: 11px;
+}
+
+.hero-source,
+.hero-visual-caption {
+  font-size: 12px;
+}
+
+.section-meta,
+.hero-eyebrow {
+  font-size: 11px;
+}
+
+.hero-facts b {
+  font-size: 15px;
+}
+
+.hero-facts small {
+  font-size: 10px;
+}
+
+main li,
+main label {
+  font-size: 14px;
+}
+
+main input,
+main textarea,
+main select {
+  font-size: 15px;
+}
+
+main button,
+.modal button {
+  font-size: 14px !important;
+}
+
+.team-choice b {
+  font-size: 15px !important;
+}
+
+.team-choice small {
+  font-size: 11px !important;
+}
+
+.launch-check {
+  font-size: 12px !important;
+}
+
+.launch-side-head span {
+  font-size: 11px !important;
+}
+
+.launch-facts span {
+  font-size: 12px !important;
+}
+
+.team-hud .team-name {
+  font-size: 12px !important;
+}
+
+.team-hud .team-score {
+  font-size: 14px !important;
+}
+
+.course-btn i {
+  font-size: 10px !important;
+}
+
+.course-btn span {
+  font-size: 12px !important;
+}
+
+.lock-requirement {
+  font-size: 14px !important;
+}
+
+/* --- 顶部导航与计分板 --------------------------------------------------- */
+.brand-text b {
+  font-size: 14px;
+}
+
+.brand-text small {
+  font-size: 10px;
+}
+
+.course-btn {
+  font-size: 12px;
+}
+
+.station-link {
+  font-size: 13px;
+}
+
+.station-link i {
+  font-size: 10px;
+}
+
+.team-name {
+  font-size: 12px;
+}
+
+.team-score {
+  font-size: 14px;
+}
+
+.mobile-stations a b {
+  font-size: 10px;
+}
+
+.mobile-stations a span {
+  font-size: 11px;
+}
+
+/* --- 第一课正文 --------------------------------------------------------- */
+.quiz-question {
+  font-size: 19px !important;
+}
+
+.quiz-option,
+.quiz-option span {
+  font-size: 14px;
+}
+
+.quiz-explain {
+  font-size: 14px !important;
+}
+
+.timeline-card p,
+.stage-card p,
+.plus-card p,
+.idea-card p,
+.summary-card p {
+  line-height: 1.7;
+}
+
+.exit-field label {
+  font-size: 13px;
+}
+
+/* --- 第二课正文 --------------------------------------------------------- */
+.l2-kicker {
+  font-size: 11px;
+}
+
+.l2-head h3 {
+  font-size: 23px;
+}
+
+.l2-hint {
+  font-size: 13px !important;
+  line-height: 1.65;
+}
+
+.l2-feedback {
+  font-size: 14px !important;
+  line-height: 1.65;
+}
+
+.l2-option {
+  min-height: 48px;
+  font-size: 14px !important;
+  line-height: 1.5;
+}
+
+.media-quiz .l2-option,
+.data-quiz .l2-option {
+  font-size: 14px !important;
+}
+
+.l2-option small {
+  font-size: 11px;
+}
+
+.media-tick {
+  font-size: 11px;
+}
+
+.media-tick b {
+  font-size: 19px;
+}
+
+.media-stat b {
+  font-size: 21px;
+}
+
+.media-stat small {
+  font-size: 10px;
+}
+
+.ui-step {
+  font-size: 13px;
+}
+
+.terminal-screen,
+.terminal-line {
+  font-size: 12px;
+}
+
+.terminal-form input {
+  font-size: 13px;
+}
+
+.gui-app b {
+  font-size: 25px;
+}
+
+.gui-app small {
+  font-size: 10px;
+}
+
+.fusion-chip span {
+  font-size: 11px;
+}
+
+.fusion-chip b {
+  font-size: 23px;
+}
+
+.atlas-chip {
+  font-size: 12px;
+}
+
+.atlas-bin h4 {
+  font-size: 14px;
+}
+
+.atlas-bin small {
+  font-size: 10px;
+}
+
+.data-app b {
+  font-size: 13px;
+}
+
+.data-app small {
+  font-size: 10px;
+}
+
+.data-value b {
+  font-size: 15px;
+}
+
+.data-value small {
+  font-size: 10px;
+}
+
+.data-growth {
+  font-size: 10px;
+}
+
+.life-card h3 {
+  font-size: 17px;
+}
+
+.life-card p {
+  font-size: 14px !important;
+}
+
+.life-option {
+  min-height: 46px;
+  font-size: 12px;
+}
+
+.life-progress {
+  font-size: 11px;
+}
+
+.course-finish p {
+  font-size: 15px !important;
+}
+
+/* 界面模拟区保持内部比例，避免字体撑破屏幕 */
+.media-screen p,
+.terminal-screen p,
+.gui-screen p,
+.bridge-phone p,
+.fusion-phone p {
+  font-size: inherit !important;
+  line-height: 1.45 !important;
+}
+
+.gui-app,
+.fusion-chip,
+.data-row,
+.media-tick {
+  font-size: 12px !important;
+}
+
+.atlas-chip {
+  font-size: 13px !important;
+}
+
+.life-option {
+  font-size: 13px !important;
+}
+
+/* --- 状态、提示与教师台文字 --------------------------------------------- */
+.toast {
+  font-size: 13px !important;
+}
+
+.toast b {
+  font-size: 14px !important;
+}
+
+.balance-line span,
+.life-progress,
+.bridge-traits small,
+.bridge-kicker span,
+.topo-result,
+summary {
+  font-size: 12px !important;
+}
+
+.bridge-status,
+.teacher-section h3,
+.teacher-panel h3 {
+  font-size: 13px !important;
+}
+
+.teacher-jumps a {
+  font-size: 12px !important;
+}
+
+.teacher-tools button,
+.teacher-plus {
+  font-size: 12px !important;
+}
+
+.teacher-shortcuts {
+  font-size: 11px !important;
+}
+
+.site-footer div > span,
+.hero-source span {
+  font-size: 11px !important;
+}
+
+/* --- 可视化标签也放大，避免“图大字小” --------------------------------- */
+.net-label b,
+.device-node b {
+  font-size: 14px !important;
+}
+
+.net-label small,
+.device-node small,
+.readout span,
+.card-source,
+.stage-period,
+.stage-key {
+  font-size: 11px !important;
+}
+
+.net-secret,
+.screen-tag,
+.app-mark,
+.map-coords,
+.era-annotation,
+.era-web-caption,
+.caption,
+.era-feed-side p,
+.atlas-empty,
+.gui-placeholder,
+.fusion-meter-row span {
+  font-size: 10px !important;
+  line-height: 1.5;
+}
+
+.gui-placeholder,
+.atlas-empty {
+  font-size: 12px !important;
+}
+
+.media-layer {
+  font-size: 11px !important;
+}
+
+.l2-status {
+  font-size: 12px !important;
+}
+
+/* --- 任务提示与状态文字：保证看得清 ------------------------------------- */
+.board-hint,
+.timeline-status,
+.topo-help,
+.topo-result,
+.map-feedback,
+.l2-status,
+.bridge-status,
+.media-insight,
+.data-pulse,
+.life-verdict {
+  font-size: 12px !important;
+  line-height: 1.6;
+}
+
+.media-insight,
+.data-pulse,
+.life-verdict {
+  font-size: 13px !important;
+}
+
+.l2-mono,
+.mono-label,
+.lab-code,
+.life-time,
+.life-step,
+.data-growth,
+.char-count {
+  font-size: 10px;
+}
+
+.field-label,
+.text-btn,
+.idea-team,
+.idea-total,
+.quiz-count,
+.badge-empty,
+.teacher-jump-label,
+.teacher-jumps a {
+  font-size: 11px;
+}
+
+.site-footer p {
+  font-size: 13px;
+}
+
+.footer-mark {
+  font-size: 11px;
+}
+
+.map-status,
+.stage-period,
+.stage-key,
+.slot-fill {
+  font-size: 11px;
+}
+
+/* --- 响应式 ------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .launch-courses {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .launch-course {
+    padding: 11px 14px 10px;
+  }
+
+  .launch-course > b {
+    font-size: 15px;
+  }
+
+  .gate-copy b {
+    font-size: 14px;
+  }
+
+  .gate-step {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 620px) {
+  body {
+    font-size: 17px;
+  }
+
+  .launch {
+    padding-bottom: 94px;
+  }
+
+  .launch-panel {
+    backdrop-filter: none;
+  }
+
+  .launch-side {
+    padding-bottom: 76px;
+  }
+
+  .launch-enter {
+    position: fixed;
+    left: auto;
+    right: 18px;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    width: 176px;
+    z-index: 210;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, .55);
+  }
+
+  main p,
+  .modal p,
+  .teacher-panel p {
+    font-size: 15px !important;
+  }
+
+  .section-dek,
+  .hero-lead,
+  .launch-lead {
+    font-size: 15px !important;
+  }
+
+  .gate-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .mission-gate {
+    padding: 13px 14px;
+  }
+}
+
+@media (max-width: 340px) {
+  .brand {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .team-hud {
+    gap: 2px;
+    padding-left: 4px;
+  }
+
+  .team-hud .team-name {
+    display: none;
+  }
+
+  .team-chip {
+    padding: 0 4px;
+    gap: 2px;
+  }
+}
+
+@media (max-width: 360px) {
+  .launch-enter {
+    width: 150px;
+    right: 14px;
+  }
+}
+
+
+/* --- 2026-11 第二次字号放大：正文与互动选项 ----------------------------- */
+body {
+  font-size: 19px;
+}
+
+main p,
+.modal p,
+.teacher-panel p {
+  font-size: 16px !important;
+}
+
+.section-dek,
+.hero-lead,
+.launch-lead,
+.bridge-copy > p {
+  font-size: 17px !important;
+}
+
+.gate-copy b {
+  font-size: 16px;
+}
+
+.gate-step {
+  font-size: 14px;
+}
+
+.lock-requirement {
+  font-size: 15px !important;
+}
+
+.l3-option,
+.l3-step {
+  font-size: 15px !important;
+}
+
+.l3-instruction,
+.l3-feedback {
+  font-size: 15px !important;
+}
+
+.l3-kicker,
+.l3-mini-label,
+.l3-counter,
+.l3-status-tag,
+.l3-bridge-visual .l3-cloud small {
+  font-size: 12px;
+}
+
+.l3-data-chip b { font-size: 15px; }
+.l3-data-chip small { font-size: 12px; }
+.l3-bin-head b { font-size: 15px; }
+.l3-bin > small { font-size: 12px; }
+.l3-bin-list span { font-size: 11px; }
+.l3-field b,
+.l3-field span { font-size: 12px; }
+.l3-json,
+.l3-poll-log { font-size: 13px; }
+.l3-request-line code { font-size: 13px; }
+.l3-node b { font-size: 16px; }
+.l3-node small { font-size: 12px; }
+.l3-quiz-card > h4 { font-size: 15px; }
+.l3-case-copy p { font-size: 15px !important; }
+.l3-issue b { font-size: 15px; }
+.l3-issue small { font-size: 12px; }
+.l3-req-card b { font-size: 16px; }
+.l3-req-card small { font-size: 12px; }
+.l3-scenario > b { font-size: 16px; }
+.l3-scenario > small { font-size: 13px; }
+.l3-scenario > em { font-size: 12px; }
+.l3-reason { font-size: 14px !important; }
+.l3-finish > p { font-size: 15px !important; }
+.l3-finish-badges span { font-size: 13px; }
+
+.launch-course > b { font-size: 18px; }
+.launch-course > small { font-size: 14px; }
+.launch-course > span { font-size: 12px; }
+.launch-facts span { font-size: 13px; }
+.launch-side-head span { font-size: 12px !important; }
+.team-choice b { font-size: 16px !important; }
+.team-choice small { font-size: 12px !important; }
+
+@media (max-width: 760px) {
+  body { font-size: 18px; }
+  .l3-option,
+  .l3-step { font-size: 14px !important; }
+  .l3-instruction,
+  .l3-feedback { font-size: 15px !important; }
+  .gate-step { font-size: 13px; }
+}
+
+@media (max-width: 620px) {
+  body { font-size: 18px; }
+  main p,
+  .modal p,
+  .teacher-panel p { font-size: 16px !important; }
+  .section-dek,
+  .hero-lead,
+  .launch-lead { font-size: 16px !important; }
+}
