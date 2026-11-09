@@ -863,3 +863,13 @@ main p,
   .hero-lead,
   .launch-lead { font-size: 16px !important; }
 }
+
+/* --- 顶部全屏授课按钮 --------------------------------------------------- */
+.fullscreen-top .fs-exit { display: none; }
+.fullscreen-top.is-fullscreen .fs-enter { display: none; }
+.fullscreen-top.is-fullscreen .fs-exit { display: block; }
+.fullscreen-top.is-fullscreen { border-color: rgba(255, 200, 87, .45); color: var(--amber); }
+
+@media (max-width: 760px) {
+  #soundBtn { display: none; }
+}

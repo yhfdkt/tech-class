@@ -646,6 +646,11 @@
       soundBtn.addEventListener('click', () => setSound(!state.sound));
     }
 
+    const fullscreenTopBtn = $('#fullscreenTopBtn');
+    fullscreenTopBtn?.addEventListener('click', toggleFullscreen);
+    document.addEventListener('fullscreenchange', syncFullscreenUI);
+    syncFullscreenUI();
+
     const teacherBtn = $('#teacherBtn');
     const teacherPanel = $('#teacherPanel');
     const teacherScrim = $('#teacherScrim');
@@ -727,11 +732,32 @@
     });
   }
 
-  function toggleFullscreen() {
-    if (document.fullscreenElement) {
-      document.exitFullscreen?.().catch(() => {});
-    } else {
-      document.documentElement.requestFullscreen?.().catch(() => {});
+  function syncFullscreenUI() {
+    const isFull = Boolean(document.fullscreenElement);
+    const topBtn = $('#fullscreenTopBtn');
+    if (topBtn) {
+      topBtn.classList.toggle('is-fullscreen', isFull);
+      topBtn.setAttribute('aria-pressed', isFull ? 'true' : 'false');
+      topBtn.setAttribute('aria-label', isFull ? '退出全屏' : '进入全屏授课');
+      topBtn.title = isFull ? '退出全屏' : '进入全屏授课';
+    }
+    const panelBtn = $('#fullscreenBtn');
+    if (panelBtn) panelBtn.textContent = isFull ? '退出全屏' : '进入全屏';
+  }
+
+  async function toggleFullscreen() {
+    try {
+      if (document.fullscreenElement) {
+        await document.exitFullscreen();
+      } else {
+        if (!document.documentElement.requestFullscreen) {
+          throw new Error('fullscreen unsupported');
+        }
+        await document.documentElement.requestFullscreen();
+      }
+      syncFullscreenUI();
+    } catch (err) {
+      toast('无法进入全屏', '请按 F11，或使用浏览器菜单进入全屏', '#ffc857');
     }
   }
 
